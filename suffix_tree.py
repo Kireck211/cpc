@@ -43,11 +43,6 @@ class SuffixTree:
     if(node != self.root):
       result = self.suffixesComparison(node, suffix)
 
-      # if (result[ACTION_INDEX] == 'add_new_child'):
-      #   new_node = Node(suffix)
-      #   parent.edges.append(new_node)
-      #   self.inserted = True
-      #   return
       action = result[ACTION_INDEX]
       
       if (action == 'split_suffix'):
