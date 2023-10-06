@@ -78,7 +78,7 @@ class SuffixTree:
     for n in node.edges:
       if (self.inserted):
         break
-      self.traverse_dfs(n, suffix[self.suffix_index:], node)
+      self.traverse_dfs(n, suffix[self.suffix_index:])
     
     if (not self.inserted):
       new_node = Node(suffix[self.suffix_index:]) 
@@ -113,6 +113,7 @@ class SuffixTree:
     self.inserted = False
     self.suffix_index = 0
   
+  # TODO(Kireck211): implement substring search on tree
   def exist_substring(self, text):
     pass
 
@@ -120,7 +121,7 @@ class SuffixTree:
     self.generateSuffixes()
     for suffix in self.suffixes:
       self.clear_insertion()
-      self.traverse_dfs(self.root, suffix, self.root)
+      self.traverse_dfs(self.root, suffix)
       
   def generateSuffixes(self):
     text_length = len(self.text)
